@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(Slide1.PNG) ;
+    background-attachment: fixed;
+    background-size: 96rem;
+   
+}
+
+.mainpage-footer {
+    text-align: center;
+    margin-top: 35rem;
+    width: 50%;
+}
+
+
