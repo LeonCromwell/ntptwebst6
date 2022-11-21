@@ -33,6 +33,7 @@ body::-webkit-scrollbar {
 
 body{
     background: linear-gradient(to right, #e2336b, #fcac46);
+    width: 100%;
 
 }
 :root {
@@ -152,16 +153,22 @@ body{
 
 .main-home .main-home-header {
     border-bottom: 3px solid #f8f8f8;
-    width: max-content;
+    width: 100%;
     height: 80px;
     z-index: 1005;
-   position: fixed;
+    position: fixed;
     background: #fff;
+    position: relative;
+    
+
   
 }
 .main-home .main-home-header .search{
     width: 20%;
-   
+    position: absolute;
+    top: 58%;
+    left: 12%;
+    transform: translate(-50%,-50%);
 }
 
 .main-home .main-home-header .search input[type="text"] {
@@ -169,8 +176,6 @@ body{
     outline: none;
     background: #f8f8f8;
     padding: 1rem 1.5rem;
-    margin-top: 10px;
-    margin-left: 10px;
     padding-left: calc(1rem * 2.5);
     border-radius: 100px;
     width: 100%;
@@ -180,43 +185,46 @@ body{
 
 
 .main-home .main-home-header .add-photo {
-margin-left: 1100px;
+     position: absolute;
+     top: 20%;
+     left: 88%;
    
-    margin-top: -50px;
-    width: 10%;
+    width: 11%;
     border: none;
     outline: none;
     background: linear-gradient(to right, #f3357f, #ffb769);
     padding: 1rem 1.5rem;
-    padding-left: calc(1rem);
+    padding-left: calc(1.5rem);
     border-radius: 25px;
     transition: background .5s;
     font-size: 15px;
-    padding-left: 20px;
+    
 
     
 }
 .main-home .main-home-header .icon{
-   color: black;
-   
+    position: absolute;
+    left: 76%;
+    top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    max-width: 30px;
+    width: 80px;
+    
 }
-.main-home .main-home-header #message{
+.main-home .main-home-header .message{
     max-width: 30px;
-    margin-left: 1050px;
-    margin-top: -24px;
+    float: left;
+    color: black;
 }
-.main-home .main-home-header #nofication{
+.main-home .main-home-header .nofication{
     max-width: 30px;
-    margin-left: 1000px;
-    margin-top: -35px;
+   float: right;
+   color: black;
 }
 .main-home .story {
     width: 100%;
-    height: 100px;
-    margin-top: 80px;
+    height: 50px;
+    margin-top: 10px;
     
    
 }
@@ -224,6 +232,7 @@ margin-left: 1100px;
 .main-home .feed {
     width: 100%;
     height: max-content;
+    margin-top: 10px;
 }
 .main-home  h1{
     margin-left: 20px;
