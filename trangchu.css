@@ -62,6 +62,7 @@ body{
     border-radius: 1rem 0 0 1rem;
     z-index: 1000;
    
+   
 }
 
 .logo{
@@ -159,8 +160,8 @@ body{
     position: fixed;
     background: #fff;
     position: relative;
-    
-
+    background: #fef5f6;
+    border-radius: 10px;
   
 }
 .main-home .main-home-header .search{
@@ -169,12 +170,13 @@ body{
     top: 58%;
     left: 12%;
     transform: translate(-50%,-50%);
+    
 }
 
 .main-home .main-home-header .search input[type="text"] {
     border: none;
     outline: none;
-    background: #f8f8f8;
+    background: #ffff;
     padding: 1rem 1.5rem;
     padding-left: calc(1rem * 2.5);
     border-radius: 100px;
