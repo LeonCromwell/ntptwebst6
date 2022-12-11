@@ -1,3 +1,25 @@
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+    apiKey: "AIzaSyBwNGeuFTU8GThY2hR7P3xbpErE5J39tUk",
+    authDomain: "ntptwebst6.firebaseapp.com",
+    projectId: "ntptwebst6",
+    storageBucket: "ntptwebst6.appspot.com",
+    messagingSenderId: "206898117688",
+    appId: "1:206898117688:web:0692e15acead627ef1bacd"
+ 
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = firebase.database();
+
+  
+
 /* Tạo tài khoản */
 function signup(){
     event.preventDefault();
@@ -5,19 +27,14 @@ function signup(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value; 
     var confirmpassword = document.getElementById("confirmpassword").value; 
-    var user = {
-        username : username,
-        email : email,
-        password : password,
-    }
-    if(password == confirmpassword){
-    var json = JSON.stringify(user);
-    localStorage.setItem(username,json);
-    alert("Đăng Ký Thành Công");
-    }
-    else{
-        alert("Password không khớp")
-    }
+  
+   firebase.database().ref("user").push().set({
+    "username": username,
+    "email": email,
+    "password": password,
+    "confirmpassword": confirmpassword
+   })
+   return false;
 }
 
 
