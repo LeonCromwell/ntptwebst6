@@ -25,6 +25,17 @@
         
         // Initialize Realtime Database and get a reference to the service
         const database = firebase.database();</script>
+        <style>
+            *{
+                list-style: none;
+            }
+            div{
+                background: linear-gradient(to right, #f1d2d0, #ffe5e6);
+                width: 500px;
+                height: 1000px;
+            }
+          
+        </style>
 </head>
 <body>
     <script>
@@ -53,7 +64,7 @@
     html +="<li id='message-" + snapshot.key + "'>";
         //show delate button if message is sent
         if (snapshot.val().sender == myname){
-            html += "<button data-id='" + snapshot.key + "' onclick='delateMessage(this);'>"
+            html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>"
                 html += "Delete";
             html += "</button>";
         }
@@ -77,12 +88,15 @@
       document.getElementById("message-" + snapshot.key).innerHTML = "This message has been removed";
     });
         </script>
-    <form onsubmit="return sendmessage();">
-        <input id="messaage" placeholder="enter your message" autocomplete="off">
-        <input type="submit">
-    </form>
-
-    <!--create a list-->
-    <ul id="messages"></ul>
+        <div>
+            <form onsubmit="return sendmessage();">
+                <input id="messaage" placeholder="enter your message" autocomplete="off">
+                <input type="submit">
+            </form>
+        
+            <!--create a list-->
+            <ul id="messages"></ul>
+        </div>
+    
 </body>
 </html>
