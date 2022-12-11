@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script> // TODO: Replace the following with your app's Firebase project configuration
+        // See: https://firebase.google.com/docs/web/learn-more#config-object
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwNGeuFTU8GThY2hR7P3xbpErE5J39tUk",
+            authDomain: "ntptwebst6.firebaseapp.com",
+            projectId: "ntptwebst6",
+            storageBucket: "ntptwebst6.appspot.com",
+            messagingSenderId: "206898117688",
+            appId: "1:206898117688:web:0692e15acead627ef1bacd"
+         
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        
+        // Initialize Realtime Database and get a reference to the service
+        const database = firebase.database();</script>
+</head>
+<body>
+    <script>
+       
+        var myname = prompt("Enter your name");
+
+        function sendmessage(){
+    //get massage
+        var message = document.getElementById("messaage").value;
+
+    //save in database
+    firebase.database().ref("message").push().set({
+        "sender": myname,
+        "message": message
+    })
+    
+    //prevent form from submitting
+    return false;
+}
+
+    //listen for incoming message
+    firebase.database().ref("message").on("child_added", function(snapshot){
+    var html = "";
+    //give each message a unique ID
+
+    html +="<li id='message-" + snapshot.key + "'>";
+        //show delate button if message is sent
+        if (snapshot.val().sender == myname){
+            html += "<button data-id='" + snapshot.key + "' onclick='delateMessage(this);'>"
+                html += "Delete";
+            html += "</button>";
+        }
+        html += snapshot.val().sender + ": " + snapshot.val().message;
+        html += "</li>";
+
+        document.getElementById("messages").innerHTML += html;  
+    });
+
+    function deleteMessage (self){
+        //get message ID
+        var messageId = self.getAttribute("data-id");
+
+        //delete message
+        firebase.database().ref("message").child(messageId).remove();
+    }
+
+    //attack listener for delete message
+    firebase.database().ref("message").on("child_removed", function(snapshot){
+      //remove message node
+      document.getElementById("message-" + snapshot.key).innerHTML = "This message has been removed";
+    });
+        </script>
+    <form onsubmit="return sendmessage();">
+        <input id="messaage" placeholder="enter your message" autocomplete="off">
+        <input type="submit">
+    </form>
+
+    <!--create a list-->
+    <ul id="messages"></ul>
+</body>
+</html>
