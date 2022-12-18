@@ -1,4 +1,4 @@
-
+/*Import firebase */
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
@@ -20,7 +20,7 @@ const database = firebase.database();
 
   
 
-/* Tạo tài khoản */
+/* Tạo tài khoản sử dụng firebase*/
 function signup(){
     event.preventDefault();
     var username = document.getElementById("username").value;
@@ -37,6 +37,7 @@ function signup(){
    return false;
 }
 
+/*Tạo tài khoản sử dụng localstorage */
 
 
 /* đăng nhập */
@@ -88,3 +89,8 @@ eyeOpen1.classList.remove("hidden");
 eyeClose1.classList.add("hidden");
 input1.setAttribute("type","password");
 });
+
+
+/*Đặt lại mật khẩu*/
+/*var newpassword = document.getElementById("newpassword").value;
+firebase.database.child("user").child("password").setvalue("newpassword");*/
