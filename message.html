@@ -31,10 +31,36 @@
             }
             div{
                 background: linear-gradient(to right, #f1d2d0, #ffe5e6);
-                width: 500px;
-                height: 1000px;
+                width: 300px;
+                height: max-content;
+                border-radius: 10px;
+                padding: 10px;
             }
-           
+            input[type="submit"] {
+                background: #f8f8f8;
+                border-radius: 20px;
+                border: none;
+            }
+            form {
+                overflow: visible;
+               
+            }
+            button{
+                background: #f8f8f8;
+                border: none;
+                border-radius: 20px;
+
+            }
+            button:hover{
+                background: #dbcfcf;
+            }
+            #messaage {
+               border: none;
+               border-radius: 20px;
+               height: max-content;
+               background: #f8f8f8;
+            }
+
           
         </style>
 </head>
@@ -91,8 +117,8 @@
         </script>
         <div>
             <form onsubmit="return sendmessage();">
-                <input id="messaage" placeholder="enter your message" autocomplete="off">
-                <input type="submit">
+                <input id="messaage" placeholder="enter your message" autocomplete="off" required>
+                <input type="submit" placeholder="Send">
             </form>
         
             <!--create a list-->
