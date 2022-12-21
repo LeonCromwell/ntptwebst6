@@ -75,7 +75,7 @@ function signup(){
 }
 
 /* đăng nhập */
-function login(e) {
+function login() {
     event.preventDefault();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value; 
@@ -122,9 +122,17 @@ eyeClose1.addEventListener("click", function() {
 eyeOpen1.classList.remove("hidden");
 eyeClose1.classList.add("hidden");
 input1.setAttribute("type","password");
+
 });
 
 
 /*Đặt lại mật khẩu*/
 /*var newpassword = document.getElementById("newpassword").value;
 firebase.database.child("user").child("password").setvalue("newpassword");*/
+
+// hiển thị username trong trang index
+function hienthi(username){
+    var parent = document.getElementById("name");
+    var child = document.getElementById("people-name");
+    parent.replaceChild(username,child);
+}
