@@ -11,8 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/772918bb67.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 </head>
 <body>
+    <script src="main.js"></script>
     <div class="container"> 
     <!-- sidebar -->
     <div class="sidebar">
@@ -24,8 +26,8 @@
             <div class="profile-img">
                 <img src="hang.jpg" alt="">
             </div>
-            <div class="name">
-                <h1>Nguyễn Thúy Hằng</h1>
+            <div class="name" id="name">
+                <div><h1>Nguyễn Thúy Hằng</h1></div>
                 <img src="" alt="">
             </div>
             <span>@HangPig</span>
@@ -117,39 +119,7 @@
         <div class="feed">
             <h1>Feed</h1>
             <div class="feed-content">
-                <div class="post">
-                    <div class="post-header">
-                        <img src="hang.jpg" alt="">
-                        <h1>Nguyễn Thúy Hằng</h1>
-                    </div>
-                    <div class="post-img">
-                        <img src="hang.jpg" alt="">
-                    </div>
-                    
-                    <div class="comment">
-                        <div class="heart-btn">
-                            <div class="content">
-                              <span class="heart"></span>
-                              <span class="text">Like</span>
-                              <span class="numb"></span>
-                            </div>
-                          </div>
-                         
-                        <div class="handle-comment"><a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="comment-icon">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                              </svg>                              
-                            <span class="bl">Bình luận</span></a></div>
-                        <div class="share"><a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="comment-icon">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
-                                  </svg>
-                                   <span class="cs">Chia sẻ</span>
-                            </a>
-                        </div>
-                    </div>
-                        
-                </div>
+                 
                 <div class="post">
                     <div class="post-header">
                         <img src="avtd.jpg" alt="">
@@ -180,36 +150,7 @@
                             </div>
                         </div>    
                 </div>
-                <div class="post">
-                    <div class="post-header">
-                        <img src="hoa.jpg" alt="">
-                        <h1>Hoa Phương</h1>
-                    </div>
-                        <div class="post-img">
-                           <img src="hoa.jpg" alt=""> 
-                        </div>
-                        <div class="comment">
-                            <div class="heart-btn">
-                                <div class="content">
-                                  <span class="heart"></span>
-                                  <span class="text">Like</span>
-                                  <span class="numb"></span>
-                                </div>
-                              </div>
-                              <div class="handle-comment"><a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="comment-icon">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                                  </svg>                              
-                                <span class="bl">Bình luận</span></a></div>
-                            <div class="share"><a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="comment-icon">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
-                                      </svg>
-                                       <span class="cs">Chia sẻ</span>
-                                </a>
-                            </div>
-                        </div>    
-                </div>
+              
           
             </div> 
         </div>
