@@ -1,44 +1,78 @@
-/*Import firebase */
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-const firebaseConfig = {
-    apiKey: "AIzaSyBwNGeuFTU8GThY2hR7P3xbpErE5J39tUk",
-    authDomain: "ntptwebst6.firebaseapp.com",
-    projectId: "ntptwebst6",
-    storageBucket: "ntptwebst6.appspot.com",
-    messagingSenderId: "206898117688",
-    appId: "1:206898117688:web:0692e15acead627ef1bacd"
+
+// /*Import firebase */
+// // TODO: Replace the following with your app's Firebase project configuration
+// // See: https://firebase.google.com/docs/web/learn-more#config-object
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBwNGeuFTU8GThY2hR7P3xbpErE5J39tUk",
+//     authDomain: "ntptwebst6.firebaseapp.com",
+//     projectId: "ntptwebst6",
+//     storageBucket: "ntptwebst6.appspot.com",
+//     messagingSenderId: "206898117688",
+//     appId: "1:206898117688:web:0692e15acead627ef1bacd"
  
-};
+// };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
 
 
-// Initialize Realtime Database and get a reference to the service
-const database = firebase.database();
+// // Initialize Realtime Database and get a reference to the service
+// const database = firebase.database();
 
   
 
-/* Tạo tài khoản sử dụng firebase*/
+// /* Tạo tài khoản sử dụng firebase*/
+// function signup(){
+//     event.preventDefault();
+//     var username = document.getElementById("username").value;
+//     var email = document.getElementById("email").value;
+//     var password = document.getElementById("password").value; 
+//     var confirmpassword = document.getElementById("confirmpassword").value; 
+  
+//    firebase.database().ref("user").push().set({
+//     "username": username,
+//     "email": email,
+//     "password": password,
+//     "confirmpassword": confirmpassword
+//    })
+//    return false;
+// }
+
+/*Tạo tài khoản sử dụng localstorage */
 function signup(){
     event.preventDefault();
     var username = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value; 
     var confirmpassword = document.getElementById("confirmpassword").value; 
+   var user = {
+    username : username,
+    email : email,
+    password : password,
+    confirmpassword : confirmpassword
+
+   }
+    var key = localStorage.getItem(username);
+    var data = JSON.parse(key);
+    if(data == null ){
+        if(password == confirmpassword){
+            var json = JSON.stringify(user);
+            localStorage.setItem(username,json);
+            alert("Đăng Ký Thành Công");
+            window.location.href=('dangnhap.html');
+        }
+        else {
+            alert("Password khong khop")
+        }
+    }
   
-   firebase.database().ref("user").push().set({
-    "username": username,
-    "email": email,
-    "password": password,
-    "confirmpassword": confirmpassword
-   })
-   return false;
+   else if (username == data.username){
+    alert("User da ton tai") 
+   }
+  
+   
+
 }
-
-/*Tạo tài khoản sử dụng localstorage */
-
 
 /* đăng nhập */
 function login(e) {
