@@ -20,8 +20,8 @@ body::-webkit-scrollbar {
   }
   body::-webkit-scrollbar-thumb {
     background-color: #ccc;    /* Màu của thanh cuộn (scroll thumb) */
-    border-radius: 5px;       /* Bo góc scroll thumb */
-    border: 2px solid none;  /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
+    border-radius: 10px;       /* Bo góc scroll thumb */
+    border: 0.1px solid none;  /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
     
   }
   
@@ -32,12 +32,21 @@ body::-webkit-scrollbar {
   
 
 body{
-    background: linear-gradient(to right, #e2336b, #fcac46);
-    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #f8f8f8;
+    display: flex;
+   
 
 }
 :root {
    --gradient: linear-gradient(to right, #e2336b, #fcac46);
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
 }
 
 .sidebar{
@@ -52,12 +61,12 @@ body{
 
 .main-home{
     position: absolute;
-    width: calc(100% - 300%);
+    width: 75%;
     min-height: 100vh;
+    right: 0px;
     top: 0;
-    width: max-content;
     height: max-content;
-    left: 300px;
+    /* margin-left: 300px; */
     background: #fff;
     border-radius: 1rem 0 0 1rem;
     z-index: 1000;
@@ -124,17 +133,18 @@ body{
     text-align: center;
 }
 .menu {
-    margin-top: 100px;
+    margin-top: 20px;
+    position: sticky;
 }
 
 .menu div{
     margin-top: 20px;
-    
     position: relative;
    
 }
 .menu a{
     font-size: 20px;
+   
 }
 .menu .icon {
     position: absolute;
@@ -152,24 +162,25 @@ body{
     
 }
 
+
 .main-home .main-home-header {
-    border-bottom: 3px solid #f8f8f8;
+    position: absolute;
+    top: 0px;
     width: 100%;
     height: 80px;
     z-index: 1005;
     position: fixed;
     background: #fff;
-    position: relative;
-    background: #fef5f6;
-    border-radius: 10px;
+    background: #f8f8f8;
+   
   
 }
 .main-home .main-home-header .search{
     width: 20%;
     position: absolute;
-    top: 58%;
+    top: 15%;
     left: 12%;
-    transform: translate(-50%,-50%);
+    
     
 }
 
@@ -181,17 +192,18 @@ body{
     padding-left: calc(1rem * 2.5);
     border-radius: 100px;
     width: 100%;
-    transition: background .5s;
+    position: absolute;
+    top: 0;
+    left: 40%;
     
 }
 
 
 .main-home .main-home-header .add-photo {
-     position: absolute;
-     top: 20%;
-     left: 88%;
-   
-    width: 11%;
+    position: absolute;
+     top: 15%;
+    left: 5%;
+    width: 150px;
     border: none;
     outline: none;
     background: linear-gradient(to right, #f3357f, #ffb769);
@@ -206,10 +218,9 @@ body{
 }
 .main-home .main-home-header .icon{
     position: absolute;
-    left: 76%;
+    left: 60%;
     top: 50%;
     transform: translateY(-50%);
-    cursor: pointer;
     width: 80px;
     
 }
@@ -226,12 +237,14 @@ body{
 .main-home .story {
     width: 100%;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 80px;
+   
     
    
 }
 
 .main-home .feed {
+    
     width: 100%;
     height: max-content;
     margin-top: 10px;
@@ -313,7 +326,7 @@ body{
 }
 .main-home .feed .feed-content .post .comment{
     width: 90%;
-    height: max-content;
+    height: 20rem;
     margin-left: 5%;
     border-top: 3px solid #f8f8f8;
     float: right;
@@ -323,14 +336,13 @@ body{
 
 .heart-btn{
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 8%;
-  transform: translate(-50%,-50%);
+  
 }
 .content{
   padding: 13px 16px;
   display: flex;
-  
   border-radius: 5px;
   cursor: pointer;
 }
@@ -356,7 +368,7 @@ body{
   font-family: 'Montserrat',sans-serif;
 }
 .numb:before{
-  content: '12';
+  content: '1';
   font-size: 21px;
   margin-left: 7px;
   font-weight: 600;
@@ -364,7 +376,7 @@ body{
   font-family: sans-serif;
 }
 .numb.heart-active:before{
-  content: '13';
+  content: '2';
   color: #000;
 }
 .text.heart-active{
@@ -397,37 +409,57 @@ body{
 }
 .main-home .feed .feed-content .post .comment .handle-comment{
     position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+    bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 15rem;
 }
-.bl{
-    font-size: 21px;
-  margin-left: 20px;
-  color: grey;
-  font-family: 'Montserrat',sans-serif;
-  
+.main-home .feed .feed-content .post .comment .handle-comment input[type="text"]{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+    width: 90%;
+    background: #f8f8f8;
+    border-radius: 100px;
+    padding: 1rem;
+    
 }
-.main-home .feed .feed-content .post .comment .comment-icon{
+.main-home .feed .feed-content .post .comment .handle-comment button{
+    position: absolute;
+    right: 0px;
+}
+.main-home .feed .feed-content .post .comment .handle-comment #old-comment{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: max-content;
+    overflow:auto;
+}
+.main-home .feed .feed-content .post .comment .share-icon{
     position: absolute;
     width: 30px;
     height: 30px;
-   color: black;
+    color: grey;
    transform: translate(-50%,-50%);
    background-size: 2900%;
-   top: 50%;
+   top: 30%;
 }
 .main-home .feed .feed-content .post .comment .share{
     position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%,-50%);
-  width: 200px;
+  top: 10px;
+  left: 70%;
+  width: 136.84px;
+  height: 58px;
 }
 .cs{
     font-size: 21px;
   margin-left: 20px;
   color: grey;
   font-family: 'Montserrat',sans-serif;
-  top: 50%;
+  
 }
+/* .main-home .feed .feed-content .post .comment #show-comment{
+    position: absolute;
+    top: 50px;
+} */
