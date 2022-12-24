@@ -352,7 +352,7 @@ body{
 }
 .heart{
   position: absolute;
-  background: url("img.png") no-repeat;
+  background: url("img/img.png") no-repeat;
   background-position: left;
   background-size: 2900%;
   height: 90px;
