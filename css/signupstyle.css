@@ -1,0 +1,138 @@
+@import url(reset.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f1d2d0, #ffe5e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-card {
+    width: 450px;
+    background: rgba(255, 255, 255, .5);
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.signup-card::before {
+    
+    position: absolute;
+    background: rgba(255, 255, 255, .15);
+    inset: 0;
+    transform: rotate(-Sdeg);
+    z-index: -1;
+}
+
+.signup-card-logo {
+    margin-bottom: 2rem;
+}
+
+.signup-card-logo img {
+    width: 200px;
+}
+
+.signup-card-logo,
+.signup-card-header,
+.signup-card-footer {
+    text-align: center;
+}
+
+.signup-card a {
+    text-decoration: none;
+    color: #35339a;
+}
+
+.signup-card a:hover {
+    text-decoration: underline;
+}
+
+.signup-card-header {
+    margin-bottom: 2rem;
+}
+
+.signup-card-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.signup-card-header h1 + div {
+    font-size: calc(1rem * .8);
+    opacity: .8;
+}
+
+.signup-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    right: 15px;
+    top: 25%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    max-width: 20px;
+}
+.eye1 {
+    position: absolute;
+    right: 15px;
+    top: 41%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    max-width: 20px;
+}
+.hidden{
+    display: none;
+}
+
+
+.signup-card-footer {
+    margin-top: 1.5rem;
+    font-size: calc(1rem * .8);
+}
+
+.signup-card input[type="text"],
+.signup-card input[type="password"],
+.signup-card input[type="email"] {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .9);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5);
+    border-radius: 100px;
+    width: 100%;
+    transition: background .5s;
+}
+
+.signup-card-form button {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.827);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem);
+    border-radius: 100px;
+    width: 100%;
+    transition: background .5s;
+    font-size: 20px;
+
+}
+
+
+.signup-card-form input[type="date"] {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .9);
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5);
+    border-radius: 100px;
+    width: 100%;
+    transition: background .5s;
+}
