@@ -55,6 +55,7 @@ function signup(){
     var key = localStorage.getItem(username);
     var data = JSON.parse(key);
     if(data == null ){
+        
         if(password == confirmpassword){
             var json = JSON.stringify(user);
             localStorage.setItem(username,json);
@@ -85,7 +86,8 @@ function login() {
         alert("Vui lòng nhập username")
     }
     else if(username ==data.username && password ==data.password){
-        
+        var json = JSON.stringify(username);
+        localStorage.setItem('tam',json);
         window.location.href="trangchu.html"
     }
     else if(username !=data.username || password !=data.password){
@@ -131,8 +133,3 @@ input1.setAttribute("type","password");
 firebase.database.child("user").child("password").setvalue("newpassword");*/
 
 // hiển thị username trong trang index
-function hienthi(username){
-    var parent = document.getElementById("name");
-    var child = document.getElementById("people-name");
-    parent.replaceChild(username,child);
-}
