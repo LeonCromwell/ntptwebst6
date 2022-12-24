@@ -82,8 +82,8 @@ function login() {
     var password = document.getElementById("password").value; 
     var user = localStorage.getItem(username);
     var data = JSON.parse(user);
-    if(username == null){
-        alert("Vui lòng nhập username")
+    if(data == null){
+        alert("Username không tồn tại")
     }
     else if(username ==data.username && password ==data.password){
         var json = JSON.stringify(username);
