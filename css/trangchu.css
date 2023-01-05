@@ -159,6 +159,7 @@ body{
 
 .menu div a:hover{
     color: #e2336b;
+    background: #ccc;
     
 }
 
@@ -380,7 +381,7 @@ body{
   color: #000;
 }
 .heart.heart-active{
-  animation: animate .8s steps(28) 1;
+  animation: animate .8s steps(28) 1; /*animation name, animation-duration, animation-timing-funcion, animation-iteration-count*/
   background-position: right;
 }
 @keyframes animate {
@@ -514,3 +515,33 @@ body{
     position: absolute;
     
 }
+
+.menu .sub-menu {
+    display: none;
+    margin-left: 100px;
+}
+.menu div:hover .sub-menu {
+    display: block;
+   
+}
+.menu div:hover {
+    background: #ccc;
+    color: #e2336b;
+}
+
+.menu .sub-menu .sub-menu-2 {
+    display: none;
+    margin-left: 150px;
+}
+
+.menu .sub-menu div:hover .sub-menu-2 {
+    display: block;
+}
+
+.menu .sub-menu div:hover {
+    background: #ccc;
+    color: #e2336b;
+}
+
+
+
