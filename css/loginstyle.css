@@ -20,11 +20,11 @@ body {
 }
 
 .login-card::before {
-    content: '';
+   
     position: absolute;
     background: rgba(255, 255, 255, .15);
-    inset: 0;
-    transform: rotate(-Sdeg);
+    /* inset: 0; */
+    /* transform: rotate(-Sdeg); */
     z-index: -1;
 }
 
@@ -61,10 +61,7 @@ body {
     margin-bottom: .5rem;
 }
 
-.login-card-header h1 + div {
-    font-size: calc(1rem * .8);
-    opacity: .8;
-}
+
 
 .login-card-form {
     display: flex;
@@ -110,7 +107,7 @@ body {
     outline: none;
     background: rgba(255, 255, 255, .9);
     padding: 1rem 1.5rem;
-    padding-left: calc(1rem * 3.5);
+    padding-left: 3.5rem;
     border-radius: 100px;
     width: 100%;
     transition: background .5s;
